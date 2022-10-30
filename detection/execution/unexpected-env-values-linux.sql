@@ -33,6 +33,7 @@ WHERE -- This time should match the interval
     AND NOT p.path LIKE '%/firefox'
     AND NOT pe.value = 'libfakeroot.so'
     AND NOT pe.value LIKE ':/home/%/.local/share/Steam'
+    AND NOT pe.value LIKE ':/home/%/.local/share/Steam/%'
     AND NOT pe.value LIKE ':/home/%/.var/app/com.valvesoftware.Steam/%'
     AND NOT pe.value LIKE ':/snap/%'
     AND NOT pe.value LIKE '/app/bin/%'
