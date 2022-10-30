@@ -141,5 +141,8 @@ WHERE
     exception_key = '500,/tmp/main,500u,500g,main'
     AND p.path LIKE '/tmp/go-build%/exe/main'
   )
+  AND NOT (
+    pp.cmdline LIKE '/bin/bash /usr/bin/mkinitcpio -k %'
+  )
 GROUP BY
   p.cmdline
