@@ -31,6 +31,7 @@ WHERE -- This time should match the interval
     '/usr/bin/gpg-agent',
     '/usr/bin/bwrap'
   )
+  AND pp.path != '/opt/1Password/1password'
 GROUP BY
   p.pid
 HAVING
