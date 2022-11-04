@@ -37,6 +37,7 @@ WHERE
   )
   -- false positives
   AND file.path NOT IN (
+    '/bin/X11/strace-log-merge',
     '/etc/master.passwd',
     '/usr/share/doc/strace/NEWS',
     '/bin/strace-log-merge',
