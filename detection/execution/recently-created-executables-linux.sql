@@ -59,6 +59,8 @@ WHERE
     '/usr/bin/rpi-imager',
     '/usr/bin/tailscaled',
     '/usr/bin/udevadm',
+    '/usr/bin/sort',
+    '/usr/bin/guile',
     '/opt/sublime_text/sublime_text',
     '/usr/bin/wpa_supplicant',
     '/usr/lib64/firefox/firefox',

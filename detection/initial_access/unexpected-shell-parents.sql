@@ -52,6 +52,7 @@ WHERE
     'goland',
     'helm',
     'java',
+    'gnome-shell',
     'ko',
     'kubectl',
     'lightdm',

@@ -113,8 +113,7 @@ WHERE
     cmd LIKE '%csrutil status'
     AND parent_name IN ('Dropbox')
   ) -- The source of these commands is still a mystery to me.
-  AND NOT (
-    cmd IN (
+  AND NOT cmd IN (
       '/usr/bin/csrutil status',
       '/usr/bin/csrutil report',
       '/bin/launchctl list',
@@ -122,9 +121,9 @@ WHERE
       'launchctl list us.zoom.ZoomDaemon',
       'sudo launchctl list us.zoom.ZoomDaemon',
       '/bin/launchctl list homebrew.mxcl.yabai',
-      '/bin/launchctl asuser 0 /bin/launchctl list'
-    )
-    OR p.parent = -1
+      '/bin/launchctl asuser 0 /bin/launchctl list',
+      '/bin/rm -f /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress',
+      '/usr/bin/sudo /bin/rm -f /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress'
   )
   AND NOT cmd LIKE '/bin/rm -f /tmp/periodic.%'
   AND NOT cmd LIKE 'rm -f /tmp/locate%/_updatedb%'
@@ -132,3 +131,4 @@ WHERE
   AND NOT cmd LIKE 'rm -f /tmp/insttmp_%'
   AND NOT cmd LIKE 'touch -r /tmp/KSInstallAction.%'
   AND NOT cmd LIKE '%find /Applications/LogiTuneInstaller.app -type d -exec chmod 777 {}%'
+  AND NOT cmd LIKE '/bin/cp %/.zsh_history %/.zsh_sessions/%'

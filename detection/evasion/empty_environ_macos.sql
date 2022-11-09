@@ -58,6 +58,7 @@ WHERE -- This time should match the interval
     'Developer ID Application: JetBrains s.r.o. (2ZEFAR8TH3)',
     'Developer ID Application: Keybase, Inc. (99229SGT5K)',
     'Developer ID Application: Kolide Inc (YZ3EM74M78)',
+    'Developer ID Application: Zoom Video Communications, Inc. (BJ4HAAB9B3)',
     'Developer ID Application: Logitech Inc. (QED4VVPZWA)',
     'Developer ID Application: Microsoft Corporation (UBF8T346G9)',
     'Developer ID Application: Mozilla Corporation (43AQ936H96)',

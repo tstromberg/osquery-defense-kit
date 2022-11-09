@@ -36,6 +36,7 @@ WHERE
   p.euid < p.uid
   AND p.path NOT IN (
     '/Library/DropboxHelperTools/Dropbox_u501/dbkextd',
+    '/Library/DropboxHelperTools/DropboxHelperInstaller',
     '/usr/bin/login',
     '/usr/bin/su',
     '/usr/bin/sudo',

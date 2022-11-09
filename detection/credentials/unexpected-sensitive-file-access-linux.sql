@@ -86,6 +86,7 @@ WHERE
       'firefox,firefox,~/.mozilla/firefox',
       'firefox,file:// Content,~/.cache/mozilla',
       'firefox,firefox,~/snap/firefox',
+      'plugin-container,MainThread,~/snap/firefox',
       'firefox,Isolated Servic,~/.cache/mozilla',
       'firefox,Isolated Servic,~/snap/firefox',
       'firefox,Isolated Web Co,~/.cache/mozilla',

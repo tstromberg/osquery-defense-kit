@@ -58,7 +58,7 @@ WHERE
   AND p.path NOT LIKE '/nix/store/%/bin/sudo'
   AND p.path NOT LIKE '/nix/store/%/bin/dhcpcd'
   AND p.path NOT LIKE '/snap/snapd/%/usr/lib/snapd/snap-confine'
-  AND NOT pp.cmdline = '/usr/lib/systemd/systemd --user'
+  AND NOT pp.cmdline NOT LIKE '%/systemd --user'
   AND NOT (
     child_name = 'polkit-agent-helper-1'
     AND parent_path = '/usr/bin/gnome-shell'

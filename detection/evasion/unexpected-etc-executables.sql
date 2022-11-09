@@ -1,3 +1,4 @@
+
 -- Find unexpected executables in /etc
 --
 -- references:
@@ -90,6 +91,7 @@ WHERE
     '/etc/pinentry',
     '/etc/pm/sleep.d',
     '/etc/ppp',
+    '/etc/redhat-lsb',
     '/etc/ppp/ip-down.d',
     '/etc/ppp/ip-up.d',
     '/etc/ppp/ipv6-up.d',

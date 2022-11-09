@@ -40,6 +40,7 @@ WHERE -- This time should match the interval
     'systemd-userwor',
     'gnome-terminal-',
     'sshd',
+    'nginx',
     'zoom.real',
     'zoom',
     'zypak-sandbox'
@@ -49,6 +50,7 @@ WHERE -- This time should match the interval
     '/usr/bin/bwrap',
     '/usr/lib/slack/slack',
     '/usr/sbin/nginx',
+    '/usr/bin/nginx',
     '/usr/libexec/gnome-terminal-server',
     '/usr/lib/systemd/systemd-userdbd',
     '/opt/google/chrome/chrome',

@@ -23,14 +23,19 @@ SELECT
   CONCAT (
     MIN(p.euid, 500),
     ',',
+    -- Normalize /nix, /snap, /opt to /usr
     REPLACE(
       REPLACE(
-        REGEX_MATCH (p.path, '(/.*?)/', 1),
-        '/nix',
+        REPLACE(
+          REGEX_MATCH (p.path, '(/.*?)/', 1),
+          '/nix',
+          '/usr'
+        ),
+        '/snap',
         '/usr'
       ),
-      '/snap',
-      '/opt'
+      '/opt',
+      '/usr'
     ),
     '/',
     REGEX_MATCH (p.path, '.*/(.*?)$', 1),
@@ -64,7 +69,6 @@ WHERE
   AND s.remote_address NOT LIKE 'fc00:%'
   AND p.path != ''
   AND NOT exception_key IN (
-    '0,/opt/snapd,0u,0g,snapd',
     '0,/sbin/apk,u,g,apk',
     '0,/usr/bash,0u,0g,mkinitcpio',
     '0,/usr/cmake,u,g,cmake',
@@ -99,29 +103,19 @@ WHERE
     '500,/home/WPILibInstaller,500u,500g,WPILibInstaller',
     '500,/ko-app/chainctl,u,g,chainctl',
     '500,/ko-app/controlplane,u,g,controlplane',
-    '500,/opt/1password,0u,0g,1password',
-    '500,/opt/Brackets,0u,0g,Brackets',
-    '500,/opt/todoist,0u,0g,todoist',
-    '500,/opt/chrome,0u,0g,chrome',
-    '500,/opt/snap-store,0u,0g,snap-store',
-    '500,/usr/obs,0u,0g,obs',
-    '500,/opt/zoom,0u,0g,zoom',
-    '500,/opt/Discord,0u,0g,Discord',
-    '500,/opt/firefox,0u,0g,firefox',
-    '500,/opt/firefox,0u,0g,Socket Process',
-    '500,/opt/kubectl,0u,0g,kubectl',
-    '500,/opt/slack,0u,0g,slack',
-    '500,/opt/spotify,0u,0g,spotify',
-    '500,/usr/spotify,0u,0g,spotify',
+    '500,/usr/obs-ffmpeg-mux,0u,0g,obs-ffmpeg-mux',
     '500,/tmp/jetbrains-toolbox,u,g,jetbrains-toolb',
+    '500,/usr/1password,0u,0g,1password',
     '500,/usr/abrt-action-generate-core-backtrace,0u,0g,abrt-action-gen',
     '500,/usr/bom,500u,500g,bom',
+    '500,/usr/Brackets,0u,0g,Brackets',
     '500,/usr/cargo,0u,0g,cargo',
     '500,/usr/chainctl,0u,0g,chainctl',
     '500,/usr/chrome,0u,0g,chrome',
     '500,/usr/code,0u,0g,code',
     '500,/usr/cosign,500u,500g,cosign',
     '500,/usr/curl,0u,0g,curl',
+    '500,/usr/Discord,0u,0g,Discord',
     '500,/usr/electron,0u,0g,electron',
     '500,/usr/firefox,0u,0g,firefox',
     '500,/usr/firefox,0u,0g,.firefox-wrappe',
@@ -136,20 +130,26 @@ WHERE
     '500,/usr/gnome-software,0u,0g,gnome-software',
     '500,/usr/go,0u,0g,go',
     '500,/usr/go,500u,500g,go',
+    '500,/usr/goa-daemon,0u,0g,goa-daemon',
     '500,/usr/gsd-datetime,0u,0g,gsd-datetime',
     '500,/usr/gvfsd-http,0u,0g,gvfsd-http',
     '500,/usr/java,0u,0g,java',
+    '500,/usr/kubectl,0u,0g,kubectl',
     '500,/usr/kubectl,500u,500g,kubectl',
+    '500,/usr/obs,0u,0g,obs',
     '500,/usr/rpi-imager,0u,0g,rpi-imager',
     '500,/usr/signal-desktop,0u,0g,signal-desktop',
     '500,/usr/slack,0u,0g,slack',
+    '500,/usr/snap-store,0u,0g,snap-store',
     '500,/usr/spotify,0u,0g,spotify',
     '500,/usr/syncthing,0u,0g,syncthing',
     '500,/usr/terraform,0u,0g,terraform',
+    '500,/usr/todoist,0u,0g,todoist',
     '500,/usr/trivy,0u,0g,trivy',
     '500,/usr/WebKitNetworkProcess,0u,0g,WebKitNetworkPr',
     '500,/usr/xmobar,0u,0g,xmobar',
-    '500,/usr/yay,0u,0g,yay'
+    '500,/usr/yay,0u,0g,yay',
+    '500,/usr/zoom,0u,0g,zoom'
   )
   -- Exceptions where we have to be more flexible for the process name
   AND NOT exception_key LIKE '500,/usr/node,0u,0g,npm exec %'
@@ -164,6 +164,11 @@ WHERE
   AND NOT (
     exception_key = '500,/tmp/main,500u,500g,main'
     AND p.path LIKE '/tmp/go-build%/exe/main'
+  )
+    -- EndeavourOS
+  AND NOT (
+    exception_key = '0,/usr/curl,0u,0g,curl'
+    AND p.cmdline LIKE 'curl --fail -Lsm 30 -w %'
   )
 GROUP BY
   p.cmdline

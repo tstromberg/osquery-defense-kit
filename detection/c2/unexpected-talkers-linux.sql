@@ -153,5 +153,10 @@ WHERE
     AND s.remote_port = 40022
     AND s.remote_address = '104.131.84.33' -- gatekeeper.uservers.net
   )
+  -- EndeavourOS
+  AND NOT (
+    exception_key = '80,6,0,/usr/curl,0u,0g,curl'
+    AND p.cmdline LIKE 'curl --fail -Lsm 30 -w %'
+  )
 GROUP BY
   p.cmdline
