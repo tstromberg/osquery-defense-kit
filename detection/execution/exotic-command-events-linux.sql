@@ -44,32 +44,35 @@ WHERE
     basename IN (
       'bitspin',
       'bpftool',
-      'heyoka',
-      'nstx',
-      'dnscat2',
-      'tuns',
-      'iodine',
-      'minerd',
-      'cpuminer-multi',
       'cpuminer',
+      'cpuminer-multi',
+      'dnscat2',
+      'heyoka',
       'httpdns',
-      'rshell',
-      'rsh',
-      'xmrig',
       'incbit',
       'insmod',
+      'iodine',
       'kmod',
       'lushput',
+      'masscan',
+      'minerd',
       'mkfifo',
       'msfvenom',
       'nc',
-      'socat'
+      'nstx',
+      'proot',
+      'rsh',
+      'rshell',
+      'socat',
+      'tuns',
+      'xmrig'
     )
     -- Chrome Stealer
     OR cmd LIKE '%chrome%-load-extension%'
     -- Known attack scripts
     OR basename LIKE '%pwn%'
     OR basename LIKE '%attack%'
+    OR cmd LIKE '%linpeas%'
     -- Unusual behaviors
     OR cmd LIKE '%ufw disable%'
     OR cmd LIKE '%iptables -P % ACCEPT%'

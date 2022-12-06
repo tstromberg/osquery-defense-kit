@@ -46,22 +46,28 @@ WHERE
   AND (
     basename IN (
       'bitspin',
-      'bpftool',
-      'csrutil',
-      'heyoka',
-      'nstx',
+      'cpuminer',
+      'cpuminer-multi',
       'dnscat2',
-      'tuns',
-      'iodine',
-      'rshell',
-      'rsh',
+      'heyoka',
+      'httpdns',
       'incbit',
+      'insmod',
+      'iodine',
       'kmod',
       'lushput',
+      'masscan',
+      'minerd',
       'mkfifo',
       'msfvenom',
       'nc',
-      'socat'
+      'nstx',
+      'proot',
+      'rsh',
+      'rshell',
+      'socat',
+      'tuns',
+      'xmrig'
     ) -- Chrome Stealer
     OR cmd LIKE '%set visible of front window to false%'
     OR cmd LIKE '%chrome%-load-extension%' -- Known attack scripts

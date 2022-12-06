@@ -26,10 +26,38 @@ FROM
   LEFT JOIN hash AS phash ON pp.path = phash.path
 WHERE
   -- Known attack scripts
-  p.name IN ('nc', 'mkfifo')
+  p.name IN (
+      'bitspin',
+      'bpftool',
+      'cpuminer',
+      'cpuminer-multi',
+      'dnscat2',
+      'heyoka',
+      'httpdns',
+      'incbit',
+      'insmod',
+      'iodine',
+      'kmod',
+      'rsocx',
+      'lushput',
+      'masscan',
+      'rustscan',
+      'minerd',
+      'mkfifo',
+      'msfvenom',
+      'nc',
+      'nstx',
+      'proot',
+      'rsh',
+      'rshell',
+      'socat',
+      'tuns',
+      'xmrig'
+
   OR p.name LIKE '%pwn%'
   OR p.name LIKE '%xig%'
   OR p.name LIKE '%xmr%'
+  OR cmd LIKE '%linpeas%'
   OR cmd LIKE '%bitspin%'
   OR cmd LIKE '%lushput%'
   OR cmd LIKE '%incbit%'
