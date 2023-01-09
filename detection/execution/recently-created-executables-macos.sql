@@ -38,7 +38,7 @@ WHERE
   p.start_time > 0
   AND f.ctime > 0
   AND p.start_time > (strftime('%s', 'now') - 86400)
-  AND (p.start_time - MAX(f.ctime, f.btime)) < 180
+  AND (p.start_time - MAX(f.ctime, f.btime)) < 300
   AND p.start_time >= MAX(f.ctime, f.btime)
   AND signature.authority NOT IN (
     'Apple Mac OS Application Signing',
