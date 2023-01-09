@@ -37,9 +37,9 @@ FROM
 WHERE
   p.start_time > 0
   AND f.ctime > 0
-  AND p.start_time > (strftime('%s', 'now') - 7200)
+  AND p.start_time > (strftime('%s', 'now') - 86400)
   AND (p.start_time - MAX(f.ctime, f.btime)) < 180
-  AND p.start_time >= MAX(f.ctime, f.ctime)
+  AND p.start_time >= MAX(f.ctime, f.btime)
   AND signature.authority NOT IN (
     'Apple Mac OS Application Signing',
     'Developer ID Application: SUSE LLC (2Q6FHJR3H3)',
@@ -119,7 +119,7 @@ WHERE
   AND NOT (
     p.path LIKE '/Users/%/Library/Printers/EPSON%/Contents/MacOS/PrinterProxy'
     AND signature.identifier = 'com.apple.print.PrinterProxy'
-    AND signatur.authority = ''
+    AND signature.authority = ''
   )
 GROUP BY
   p.pid
