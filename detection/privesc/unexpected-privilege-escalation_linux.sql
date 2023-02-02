@@ -43,6 +43,7 @@ FROM
 WHERE
   p0.euid < p0.uid
   AND p0.path NOT IN (
+    '',
     '/bin/ps',
     '/usr/bin/doas',
     '/usr/bin/fusermount',
