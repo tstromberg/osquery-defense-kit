@@ -3,7 +3,7 @@
 -- references:
 --   * https://www.microsoft.com/en-us/security/blog/2022/12/21/microsoft-research-uncovers-new-zerobot-capabilities/
 --
--- tags: transient process rapid state
+-- tags: transient process state
 -- platform: posix
 SELECT
   p.pid,

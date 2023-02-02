@@ -7,7 +7,7 @@
 -- related:
 --   * unexpected-privilege-escalation-events.sql
 --
--- tags: transient rapid state process escalation
+-- tags: transient state process escalation
 -- platform: linux
 SELECT
   -- Child

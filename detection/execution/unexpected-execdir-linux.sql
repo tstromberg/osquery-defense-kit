@@ -3,7 +3,7 @@
 -- references:
 --   * https://blog.talosintelligence.com/2022/10/alchimist-offensive-framework.html
 --
--- tags: transient process rapid state
+-- tags: transient process state
 -- platform: linux
 SELECT
   p.pid,
@@ -87,3 +87,4 @@ WHERE
     p.cgroup_path LIKE '/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome-Alacritty-%.scope'
     AND dirname LIKE '/tmp/%'
   )
+GROUP BY p.path

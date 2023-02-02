@@ -9,12 +9,12 @@
 -- may reflect the number of times the attack has been attempted.
 --
 -- platform: linux
--- tags: transient often
+-- tags: transient
 SELECT
   *
 FROM
   docker_image_history
 WHERE
-  created > (strftime('%s', 'now') -86400)
+  created > (strftime('%s', 'now') -43200)
   -- This signature is used by Traitor: https://github.com/liamg/traitor/
   AND created_by LIKE '%/bin/sh%/lol%';
