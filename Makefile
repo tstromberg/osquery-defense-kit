@@ -36,13 +36,17 @@ reformat:
 reformat-updates:
 	git status -s | awk '{ print $$2 }' | grep ".sql" | perl -ne 'chomp; system("cp $$_ /tmp/fix.sql && npx sql-formatter -l sqlite /tmp/fix.sql > $$_");'
 
-.PHONY: collection
-collection: ./out/osqtool-$(ARCH)
+.PHONY: collect
+collect: ./out/osqtool-$(ARCH)
 	mkdir -p $(COLLECT_DIR)
 	@echo "Saving output to: $(COLLECT_DIR)"
 	$(SUDO) ./out/osqtool-$(ARCH) run incident_response | tee $(COLLECT_DIR)/incident_response.txt
 	$(SUDO) ./out/osqtool-$(ARCH) run policy | tee $(COLLECT_DIR)/policy.txt
 	$(SUDO) ./out/osqtool-$(ARCH) run detection | tee $(COLLECT_DIR)/detection.txt
+
+.PHONY: detect
+detect: ./out/osqtool-$(ARCH)
+	$(SUDO) ./out/osqtool-$(ARCH) run detection
 
 all: out/odk-packs.zip
 
