@@ -14,7 +14,7 @@ out/odk-detection-collection.conf: out/osqtool-$(ARCH) $(wildcard detection/coll
 	./out/osqtool-$(ARCH) --max-query-duration=4s --verify -output out/odk-detection-collection.conf pack detection/collection
 
 out/odk-detection-credentials.conf: out/osqtool-$(ARCH) $(wildcard detection/credentials/*.sql)
-	./out/osqtool-$(ARCH) --max-query-duration=4s --verify -output out/odk-detection-credentials.conf pack detection/credentials
+	./out/osqtool-$(ARCH) --max-query-duration=8s --verify -output out/odk-detection-credentials.conf pack detection/credentials
 
 out/odk-detection-discovery.conf: out/osqtool-$(ARCH) $(wildcard detection/discovery/*.sql)
 	./out/osqtool-$(ARCH) --max-query-duration=4s --verify -output out/odk-detection-discovery.conf pack detection/discovery
@@ -74,8 +74,12 @@ detect: ./out/osqtool-$(ARCH)
 	$(SUDO) ./out/osqtool-$(ARCH) run detection
 
 .PHONY: run-detect-pack
-run-detect-pack: out/odk-detection.conf
-	$(SUDO) osqueryi --config_path osquery.conf --pack detection
+run-detect-pack: packs
+	grep out/odk-detection osquery.conf | cut -d\" -f2 | $(SUDO) xargs -I {} bash -c "echo {}; echo "======================"; osqueryi --verbose --config_path osquery.conf --pack {}"
+
+.PHONY: detect-native
+detect-native: packs
+	$(SUDO) find detection -name "*.sql" \! -name "*events*.sql" -print -exec bash -c "(cat {}; echo \;) | osqueryi" \;
 
 .PHONY: run-ir-pack
 run-ir-pack: out/odk-incident-response.conf
@@ -104,4 +108,3 @@ verify: ./out/osqtool-$(ARCH)
 	$(SUDO) ./out/osqtool-$(ARCH) --max-results=0 --max-query-duration=16s --max-total-daily-duration=2h30m --max-query-daily-duration=1h verify detection
 
 all: out/odk-packs.zip
-
