@@ -50,13 +50,6 @@ WHERE
     '/Library/Application Support/Logitech/com.logitech.vc.LogiVCCoreService/LogiVCCoreService.app/Contents/MacOS/LogiVCCoreService',
     '/Library/Application Support/Razer/RzUpdater.app/Contents/MacOS/RzUpdater',
     '/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home/bin/java',
-    '/Library/Printers/Brother/Filter/rastertobrother2300.bundle/Contents/MacOS/rastertobrother2300',
-    '/Library/Printers/Brother/Utilities/BrStatusMonitor.app/Contents/MacOS/BrStatusMonitor',
-    '/Library/Printers/Brother/Utilities/Server/LOGINserver.app/Contents/MacOS/LOGINserver',
-    '/Library/Printers/Brother/Utilities/Server/NETserver.app/Contents/MacOS/NETserver',
-    '/Library/Printers/Brother/Utilities/Server/USBAppControl.app/Contents/MacOS/USBAppControl',
-    '/Library/Printers/Brother/Utilities/Server/USBserver.app/Contents/MacOS/USBserver',
-    '/Library/Printers/Brother/Utilities/Server/WorkflowAppControl.app/Contents/MacOS/WorkflowAppControl',
     '/Volumes/CANON_IJ/Setup.app/Contents/MacOS/Setup',
     '/opt/IRCCloud/chrome-sandbox',
     '/opt/IRCCloud/irccloud',
@@ -79,6 +72,7 @@ WHERE
     '/usr/libexec/dconf-service',
     '/usr/local/bin/dive'
   )
+  AND f.path NOT LIKE '/Library/Printers/%'
   AND p.name NOT IN (
     'Android File Transfer Agent',
     'BluejeansHelper',

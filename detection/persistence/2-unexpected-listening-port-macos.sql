@@ -257,6 +257,7 @@ WHERE
       OR p.name LIKE 'kubectl.%'
       OR p.name LIKE '__%_go'
       OR p.name LIKE 'python3.%'
+      OR p.name LIKE 'python2.7%'
     )
     AND lp.port > 1024
     and lp.protocol = 6

@@ -77,6 +77,7 @@ WHERE
     '/usr/bin/nautilus',
     '/usr/bin/melange',
     '/usr/bin/pacman',
+    '/usr/bin/toolbox',
     '/usr/bin/qemu-system-x86_64',
     '/usr/bin/yay',
     '/usr/bin/zsh',

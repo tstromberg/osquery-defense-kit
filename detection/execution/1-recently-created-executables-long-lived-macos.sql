@@ -95,6 +95,7 @@ WHERE
         '/usr/local/kolide-k2/Kolide.app/Contents/MacOS',
         '~/.local/share/bob/',
         '~/.local/share/nvim/',
+        '~/.cache/selenium/chromedriver/',
         '~/.terraform.d/plugin-cache/registry.terraform.io/',
         '~/.vscode/extensions/ms-vscode.cpptools-1.15.4-darwin-arm64/',
         '~/homebrew/Library/Homebrew/',

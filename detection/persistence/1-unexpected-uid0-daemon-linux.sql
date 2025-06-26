@@ -148,6 +148,7 @@ WHERE
     'dbus-daemon,/usr/bin/dbus-daemon,0,user.slice,user-1000.slice,0755',
     'dbus-launch,/usr/bin/dbus-launch,0,user.slice,user-1000.slice,0755',
     'dconf-service,/usr/libexec/dconf-service,0,user.slice,user-1000.slice,0755',
+    'determinate-nix,/usr/local/bin/determinate-nixd,0,system.slice,nix-daemon.service,0555',
     'dhclient,/usr/sbin/dhclient,0,system.slice,networking.service,0755',
     'dhcpcd,/nix/store/__VERSION__/bin/dhcpcd,0,system.slice,dhcpcd.service,0555',
     'dirmngr,/usr/bin/dirmngr,0,system.slice,archlinux-keyring-wkd-sync.service,0755',
