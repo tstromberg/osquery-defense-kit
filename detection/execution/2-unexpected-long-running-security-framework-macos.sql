@@ -92,32 +92,21 @@ WHERE -- Focus on longer-running programs
   )
   AND exception_key NOT IN (
     '0,velociraptor,a.out,',
-    '500,___1go_build_main_go,a.out,',
-    '500,circleci-yaml-language-server,a.out,',
-    '500,cloud_sql_proxy,a.out,',
     '500,docker,docker,',
-    '500,cuelsp,a.out,',
-    '500,gopls,a.out,',
+    '500,pnpm,pnpm,',
     '500,python3,python.exe,',
-    '500,helm_ls_darwin_arm64,a.out,',
     '500,sdaudioswitch,,',
     '500,sdaudioswitch,sdaudioswitch,',
     '500,sdmicmute,sdmicmute,',
-    '500,sdzoomplugin,,',
-    '500,serial-discovery,a.out,'
+    '500,sdzoomplugin,,'
   )
-  AND NOT exception_key LIKE '500,terraform-provider-%,a.out,'
-  AND NOT exception_key LIKE '500,___%go_build_%,a.out,'
-  AND NOT exception_key LIKE '500,___2go_build_main_go,a.out,'
-  AND NOT exception_key LIKE '500,___Test%.test,a.out,'
-  AND NOT exception_key LIKE '500,___%__go_1_%,a.out,'
+  AND NOT exception_key LIKE '500,%,a.out,'
   AND NOT exception_key LIKE '500,lifx-streamdeck,lifx-streamdeck-%'
   AND NOT exception_key LIKE '500,marksman-macos,marksman-%,'
   AND NOT exception_key LIKE '500,nvim,bob-%,'
   AND NOT exception_key LIKE '500,package-version-server-v%,package_version_server-%,'
   AND NOT exception_key LIKE '500,rust-analyzer,rust_analyzer-%,'
   AND NOT exception_key LIKE '500,rust-analyzer-proc-macro-srv,rust_analyzer_proc_macro_srv-%,'
-  AND NOT exception_key LIKE '500,gopls_%_go_%,a.out,'
   AND NOT exception_key LIKE '500,sm-agent,sm_agent-%'
 GROUP BY
   p0.pid

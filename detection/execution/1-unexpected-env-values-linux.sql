@@ -48,8 +48,9 @@ WHERE -- This time should match the interval
   p0.start_time > (strftime('%s', 'now') - 300)
   AND (
     pe.key = 'HISTFILE'
-    AND NOT pe.value LIKE '/home/%/.%_history'
-    AND NOT pe.value LIKE '~/.%_history'
+    AND NOT pe.value LIKE '/home/%'
+    AND NOT pe.value LIKE '/Users/%'
+    AND NOT pe.value LIKE '~/%'
     AND NOT pe.value LIKE '%/.histfile'
     AND NOT pe.value LIKE '/root/.%_history'
   )

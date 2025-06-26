@@ -75,6 +75,7 @@ WHERE -- NOTE: The remainder of this query is synced with unexpected-fetcher-par
     'curl,500,makepkg,yay',
     'curl,500,node-cve-count.,bash',
     'curl,500,nvim,nvim',
+    'wget,0,bash,runc',
     'curl,500,nwg-panel,systemd',
     'curl,500,ruby,zsh',
     'curl,500,sh,make',

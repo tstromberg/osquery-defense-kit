@@ -59,6 +59,7 @@ WHERE
   AND p.path NOT LIKE '/app/bin/%'
   AND p.path NOT LIKE '/usr/bin/%'
   AND p.path NOT LIKE '/usr/local/bin/%'
+  AND p.path NOT LIKE '/nix/store/%/bin/%'
   AND p.path NOT LIKE '/opt/%'
   AND NOT exception_key IN (
     '0,.tailscaled-wrapped,0u,0g,.tailscaled-wra',

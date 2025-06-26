@@ -60,6 +60,8 @@ WHERE
   )
   AND file.path NOT LIKE '%/../%'
   AND file.path NOT LIKE '%/./%' -- Avoid mentioning extremely temporary files
+  AND file.path NOT LIKE '/usr/lib/x86_64-linux-gnu/.lib%.hmac'
+  AND file.path NOT LIKE '/lib/x86_64-linux-gnu/.lib%.hmac'
   AND strftime('%s', 'now') - file.ctime > 20
   AND file.path NOT IN (
     '/.autorelabel',
@@ -339,4 +341,9 @@ WHERE
     file.path LIKE '/tmp/.comments/%.jpg.xml'
     AND file.uid > 0
     AND file.size < 15000
+  )
+  AND NOT (
+    file.path LIKE '/tmp/.tmp%'
+    AND file.uid > 500
+    AND size < 4096
   )
