@@ -129,7 +129,6 @@ WHERE
     '~/Applications (Parallels)/',
     '~/Applications/',
     '~/bin/',
-    '~/chainguard_repos/',
     '~/code/',
     '~/Code/',
     '~/dev/',
@@ -142,17 +141,18 @@ WHERE
     '~/proj/',
     '~/projects/',
     '~/Projects/',
-    '~/repos/',
     '~/sigstore/',
     '~/src/',
     '~/thinkorswim/',
     '~/work/',
     '~/workspace/'
   )
+  AND NOT top_homedir LIKE '~/%repos/'
   AND NOT top3_homedir IN (
     '/Library/Application Support/EcammLive',
     '/Library/Developer/Xcode/',
     '/opt/rapid7/ir_agent',
+    '~/.cache/rod/browser/',
     '~/.cache/selenium/chromedriver/',
     '~/.local/share/bob/',
     '~/.local/share/nvim/',
@@ -167,6 +167,8 @@ WHERE
     '~/Library/Caches/JetBrains/',
     '~/Library/Caches/org.gpgtools.updater/',
     '~/Library/Caches/snyk/',
+    '~/Library/pnpm',
+    '~/Library/Razer/RazerAppEngine/',
     '~/Library/Services/UE4EditorServices.app/',
     '~/opentelemetry-operator/cmd/otel-allocator',
     '~/zed/target/release/'
@@ -216,6 +218,7 @@ WHERE
     'Developer ID Application: Logitech Inc. (QED4VVPZWA)',
     'Developer ID Application: Microsoft Corporation (UBF8T346G9)',
     'Developer ID Application: Node.js Foundation (HX7739G8FX)',
+    'Developer ID Application: Razer USA Ltd. (R2H967U7J8)',
     'Developer ID Application: Objective Development Software GmbH (MLZF7K7B5R)',
     'Developer ID Application: Objective-See, LLC (VBG97UB4TA)',
     'Developer ID Application: Opal Camera Inc (97Z3HJWCRT)',

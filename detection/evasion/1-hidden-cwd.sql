@@ -87,6 +87,7 @@ WHERE
         'nvim',
         'terraform',
         'updatedb',
+        'vi',
         'vim'
       )
       AND NOT cgroup_path LIKE '/system.slice/docker-%'
@@ -111,6 +112,7 @@ WHERE
       'conmon,/var~/.local/share',
       'curl,/var/home/linuxbrew',
       'dirhelper,/private/var/folders',
+      'zsh,~/Documents/My Vault',
       'Electron,~/.vscode/extensions',
       'exe,/var~/.local/share',
       'fileproviderd,~/Library/Mobile Documents',
@@ -195,6 +197,7 @@ WHERE
     OR dir LIKE '%/.venv/%'
     OR dir LIKE '%/node_modules/.bin'
     OR dir LIKE '~/.%'
+    OR dir LIKE '/private/var/%/T/.com.google.Chrome.%'
     OR dir LIKE '~/.gradle/%'
     OR dir LIKE '~/%/.config/nvim'
     OR dir LIKE '~/%/.docker%'
