@@ -87,6 +87,7 @@ WHERE
     'Superkey,com.knollsoft.Superkey,Developer ID Application: Ryan Hanson (XSYZ3E4B7D)',
     'synergy-core,synergy-core,Developer ID Application: Symless Ltd (4HX897Y6GJ)',
     'TextExpander,com.smileonmymac.textexpander,Developer ID Application: SmileOnMyMac, LLC (7PKJ6G4DXL)',
+    'Raycast,com.raycast.macos,Developer ID Application: Raycast Technologies Inc (SY64MV22J9)',
     'Wispr Flow,com.electron.wispr-flow.accessibility-mac-app,Developer ID Application: Wispr AI INC (C9VQZ78H85)'
   )
 GROUP BY
