@@ -84,7 +84,8 @@ WHERE
     'skhd,skhd,',
     'Superkey,com.knollsoft.Superkey,Developer ID Application: Ryan Hanson (XSYZ3E4B7D)',
     'synergy-core,synergy-core,Developer ID Application: Symless Ltd (4HX897Y6GJ)',
-    'TextExpander,com.smileonmymac.textexpander,Developer ID Application: SmileOnMyMac, LLC (7PKJ6G4DXL)'
+    'TextExpander,com.smileonmymac.textexpander,Developer ID Application: SmileOnMyMac, LLC (7PKJ6G4DXL)',
+    'Raycast,com.raycast.macos,Developer ID Application: Raycast Technologies Inc (SY64MV22J9)'
   )
 GROUP BY
   p0.path
