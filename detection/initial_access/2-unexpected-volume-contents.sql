@@ -69,28 +69,28 @@ WHERE
     OR basename LIKE 'cg%'
   ) -- exceptions go here
   AND basename NOT IN (
+    '.',
+    '..',
     '._.apdisk',
     '._.TemporaryItems',
     '._.Trashes',
     '._AUTORUN.INF',
     '._Id.txt',
-    '..',
-    '.',
     '.actrc',
     '.angular-config.json',
     '.apdisk',
+    '.background',
     '.background.png',
     '.background.tiff',
-    '.background',
     '.bash_history',
     '.bashrc',
     '.CFUserTextEncoding',
     '.dbshell',
-    '.disk_label_2x',
     '.disk_label',
+    '.disk_label_2x',
     '.DS_Store',
-    '.file-revisions-by-id',
     '.file',
+    '.file-revisions-by-id',
     '.flyrc',
     '.gitconfig',
     '.iotest',
@@ -105,6 +105,7 @@ WHERE
     '.vol',
     '.VolumeIcon.icns',
     '.zsh_history',
+    'GTechnologyFormatWizard_Installer.msi',
     'KBFS_NOT_RUNNING',
     'LogiPresentation Installer.app',
     'pve-installer.squashfs',
@@ -115,6 +116,7 @@ WHERE
     'Developer ID Application: Adobe Inc. (JQ525L2MZD)',
     'Developer ID Application: BlueStack Systems, Inc. (QX5T8D6EDU)',
     'Developer ID Application: Canon Inc. (XE2XNRRXZ5)',
+    'Developer ID Application: Cisco (DE8Y96K9QP)',
     'Developer ID Application: Dropbox, Inc. (G7HH3F8CAK)',
     'Developer ID Application: Google LLC (EQHXZ8M8AV)',
     'Developer ID Application: Logitech Inc. (QED4VVPZWA)',
@@ -129,7 +131,6 @@ WHERE
     '/Volumes/macFUSE/Install macFUSE.pkg',
     '/Volumes/PMHOME_3601DL/PMH_INST.pkg'
   )
-
   AND trimpath NOT LIKE '/Volumes/Blackmagic DaVinci Resolve/Install Resolve %.pkg'
   AND trimpath NOT LIKE '/Volumes/Google Earth Pro%/Install Google Earth Pro%.pkg'
   AND trimpath NOT LIKE '/Volumes/JDK %/JDK %.pkg'
