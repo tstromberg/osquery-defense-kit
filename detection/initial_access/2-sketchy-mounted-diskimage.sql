@@ -87,7 +87,8 @@ WHERE
         'Software Signing',
         'Developer ID Application: Atlassian Pty Ltd (UPXU4CQZ5P)',
         'Developer ID Application: Logitech Inc. (QED4VVPZWA)',
-        'Developer ID Application: MacroMates Ltd. (45TL96F76G)'
+        'Developer ID Application: MacroMates Ltd. (45TL96F76G)',
+        'Developer ID Application: OpenAI, L.L.C. (2DC432GLL2)'
       )
     ) -- Rule 3. App binaries with a numerical name, such as 2829030009 (Player_009.app)
     OR (

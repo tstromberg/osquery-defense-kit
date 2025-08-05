@@ -110,6 +110,7 @@ WHERE
     '500,Developer ID Application: AMZN Mobile LLC (94KV3E626L)',
     '500,Developer ID Application: Azul Systems, Inc. (TDTHCUPYFR)',
     '500,Developer ID Application: Blackmagic Design Inc (9ZGFBWLSYP)',
+    '500,Developer ID Application: Bookry Ltd (4259LE8SU5)',
     '500,Developer ID Application: Cisco (DE8Y96K9QP)',
     '500,Developer ID Application: David Kocher (G69SCX94XU)',
     '500,Developer ID Application: Google LLC (EQHXZ8M8AV)',
