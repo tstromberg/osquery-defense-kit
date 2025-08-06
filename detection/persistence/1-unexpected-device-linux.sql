@@ -134,6 +134,7 @@ WHERE
     '/dev/ic-,character',
     '/dev/iio:device,character',
     '/dev/initctl,fifo',
+    '/dev/infiniband/,directory',
     '/dev/input/,directory',
     '/dev/input/by-id,directory',
     '/dev/input/by-path,directory',

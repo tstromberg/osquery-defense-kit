@@ -129,6 +129,7 @@ WHERE
     'containerd,/usr/sbin/containerd,0,system.slice,docker.service,0755',
     'containerd-shim,/usr/bin/containerd-shim-runc-v2,0,system.slice,containerd.service,0755',
     'containerd-shim,/usr/bin/containerd-shim-runc-v2,0,system.slice,docker.service,0755',
+    'containerd,/snap/docker/__VERSION__/bin/containerd,0,system.slice,snap.docker.dockerd.service,0755',
     'cron,/usr/sbin/cron,0,system.slice,cron.service,0755',
     'crond,/usr/bin/crond,0,system.slice,crond.service,0755',
     'crond,/usr/bin/crond,0,system.slice,cronie.service,0755',
