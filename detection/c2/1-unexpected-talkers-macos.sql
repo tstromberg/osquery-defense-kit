@@ -168,7 +168,8 @@ WHERE
     '500,6,80,chainlink,chainlink',
     '500,6,8080,Python,Python',
     '500,6,90,java,java',
-    '500,6,9418,git,git'
+    '500,6,9418,git,git',
+    '500,6,32768,.limactl-wrapped,.limactl-wrapped'
   )
   AND NOT unsigned_exception LIKE '500,6,%,firefox,firefox'
 GROUP BY
